@@ -1,0 +1,188 @@
+<h1>Listing products</h1>
+<p>
+  Download:
+  <%#= link_to "CSV", products_path(format: "csv") %> |
+  <%= link_to "Excel", products_path(format: "xls") %>
+</p>
+
+<%#= link_to "Download_to_pdf", products_path(format: :pdf), download: "" %>
+<%= link_to "Create PDF document", index_products_products_path(@product, :format => :pdf) %>
+
+<table border="1">
+  <tr>
+    <th>Location</th>
+    <th>Product</th>
+    <th>App ID/FRN No</th>
+    <th>Aplicant Name</th>
+    <th>Loan Amount</th>
+    <th>Date of Birth/incorporation</th>
+    <th>Vehicle maker(for CV,Car Loan,tractor loan)</th>
+    <th>Vehicle Model(for CV,Car Loan,tractor loan)</th>
+    <th>Residence Address</th>
+    <th>Resi Contact No</th>
+    <th>Name of the Company</th>
+    <th>Business Address</th>
+    <th>Busi Contact No</th>
+    <th>Co-Applicant Name</th>
+    <th>Co-Applicant Resi Address</th>
+    <th>Co-Applicant Office Name</th>
+    <th>Co-Applicant Office Address</th>
+    <th>Co-Applicant Resi Contact No</th>
+    <th>Co-Applicant Office Contact No</th>
+    <th>Property Address</th>
+    <th>Reference 1 Name</th>
+    <th>Reference 1 Address</th>
+    <th>Reference 1 Phone No</th>
+    <th>Reference 2 Name</th>
+    <th>Reference 2 Address</th>
+    <th>Reference 2 Phone No</th>
+    <th>Residence Verification Details</th>
+    <th>Locality</th>
+    <th>Area of the premises</th>
+    <th>Person Met</th>
+    <th>Relationship with applicant</th>
+    <th>Stay confirmed by</th>
+    <th>Ownership</th>
+    <th>Neighbour Check Details</th>
+    <th>Remarks</th>
+    <th>Salaried/Self Employed</th>
+    <th>Business Verification Details</th>
+    <th>Locality</th>
+    <th>Premise Ownership</th>
+    <th>Area of the business premises</th>
+    <th>Person met</th>
+    <th>Designation</th>
+    <th>Nature of business</th>
+    <th>No of year business existing</th>
+    <th>Stock Level</th>
+    <th>Business activity</th>
+    <th>No of employees seen</th>
+    <th>Neighbour Check Details</th>
+    <th>Remarks</th>
+    <th>Co-Applicant Verifications</th>
+    <th>Residence</th>
+    <th>Business/Office</th>
+    <th>Collateral Check Remarks</th>
+    <th>Reference 1</th>
+    <th>Reference 2</th>
+    <th>Document Vverification remarks</th>
+    <th>RCU status</th>
+    <th>Type of Rejection</th>
+    <th>Reject Reason(If Negative or Fraud Negative)</th>
+    <th>Pickup Date</th>
+    <th>Completion Date</th>
+    <th>TAT</th>
+    <th>RCU agency Name</th>
+    <th>Source</th>
+    <th>Name of the Connector</th>
+    <th>RM Name</th>
+    <th>ITR Verifications@100</th>
+    <th>Financial@500</th>
+    <th>Payslip @50</th>
+    <th>EC Extract@250</th>
+    <th>RC copy check @50</th>
+    <th>Site plan check @250</th>
+    <th>Bank Statement check @50</th>
+    <th>KYC documents,adress proofs,loan tracks,all other documents @50</th>
+    <th>Pan card check @10</th>
+    <th>Telecalling expense @10</th>
+    <th>Total amt(Rs)</th>
+    <thColspan="2"></th>
+    </thead>
+  </tr>
+    </div>
+    </div>
+ <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.location %></td>
+      <td><%= product.product %></td>
+      <td><%= product.appid_frnno %></td>
+      <td><%= product.applicant_name %></td>
+      <td><%= product.loan_amount %></td>
+      <td><%= product.date_of_birth %></td>
+      <td><%= product.vehicle_maker %></td>
+      <td><%= product.vehicle_model %></td>
+      <td style="width: 90px;"><%= product.residence_address %></td>
+      <td><%= product.resi_contact_no %></td>
+      <td><%= product.name_of_the_company %></td>
+      <td><%= product.business_address %></td>
+      <td><%= product.busi_contact_no %></td>
+      <td><%= product.co_applicant_name %></td>
+      <td><%= product.co_applicant_resi_address %></td>
+      <td><%= product.co_applicant_office_name %></td>
+      <td><%= product.co_applicant_office_address %></td>
+      <td><%= product.co_applicant_resi_contact_no %></td>
+      <td><%= product.co_applicant_office_contact_no %></td>
+      <td><%= product.property_address %></td>
+      <td><%= product.reference1_name %></td>
+      <td><%= product.reference1_address %></td>
+      <td><%= product.reference1_phone_no %></td>
+      <td><%= product.reference2_name %></td>
+      <td class="col-md-1"><%= product.reference2_address %></td>
+      <td><%= product.reference2_phone_no %></td>
+      <td><%= product.residence_verification_details %></td>
+      <td><%= product.locality %></td>
+      <td><%= product.area_of_the_premises %></td>
+      <td><%= product.person_met %></td>
+      <td><%= product.relationship_with_applicant %></td>
+      <td><%= product.stay_confirmed_by %></td>
+      <td><%= product.ownership %></td>
+      <td><%= product.neighbour_check_details %></td>
+      <td><%= product.remarks %></td>
+      <td><%= product.salaries_self_employed %></td>
+      <td><%= product.business_verification_details %></td>
+      <td><%= product.locality %></td>
+      <td><%= product.premise_ownership %></td>
+      <td><%= product.area_of_the_business_premise %></td>
+      <td><%= product.person_met %></td>
+      <td><%= product.designation %></td>
+      <td><%= product.nature_of_business %></td>
+      <td><%= product.no_of_year_business_existing %></td>
+      <td><%= product.stock_level %></td>
+      <td><%= product.business_activity %></td>
+      <td><%= product.no_of_employees_seen %></td>
+      <td><%= product.neighbour_check_details %></td>
+      <td><%= product.remarks %></td>
+      <td><%= product.co_applicant_verification %></td>
+      <td><%= product.residence %></td>
+      <td><%= product.business_office %></td>
+      <td><%= product.collateral_check_remarks %></td>
+      <td><%= product.reference1 %></td>
+      <td><%= product.reference2 %></td>
+      <td><%= product.document_verification_remarks %></td>
+      <td><%= product.rcu_status %></td>
+      <td><%= product.type_of_rejection %></td>
+      <td><%= product.reject_reason %></td>
+      <td><%= product.pickup_date %></td>
+      <td><%= product.completion_date %></td>
+      <td><%= product.tat %></td>
+      <td><%= product.rcu_agency_name %></td>
+      <td><%= product.source %></td>
+      <td><%= product.name_of_the_connector %></td>
+      <td><%= product.rm_name %></td>
+      <td><%= product.itr_verifications100 %></td>
+      <td><%= product.financial500 %></td>
+      <td><%= product.payslip_50 %></td>
+      <td><%= product.ec_extract_250 %></td>
+      <td><%= product.rc_copy_check_250 %></td>
+      <td><%= product.site_plan_check_250 %></td>
+      <td><%= product.bank_statement_check_50 %></td>
+      <td><%= product.kyc_documents_address_proofs_loan_tracks_50 %></td>
+      <td><%= product.pan_card_check_10 %></td>
+      <td><%= product.telecalling_expenses_10 %></td>
+      <td><%= product.total_amt %></td>
+    </tr>
+  </tbody>
+    </thColspan="2">
+  <% end %>
+</table>
+
+
+<h2>Import Products</h2>
+<%= form_tag import_products_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+
